@@ -2,6 +2,7 @@ import { detailAPI, videoAPI } from "@/api/movieAPI";
 import Clips from "@/components/Clips";
 import Container from "@/components/Container";
 import MovieDetails from "@/components/MovieDetails";
+import Similar from "@/components/Similar";
 
 export async function generateMetadata({ params }) {
   const { id } = params;
@@ -50,6 +51,7 @@ const MovieDetail = async ({ params }) => {
           }}
         />
         <Clips clip={results} />
+        <Similar id={id} type={"movie"} />
       </Container>
     </div>
   );

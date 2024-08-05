@@ -17,7 +17,7 @@ const Hero = () => {
           </p>
           <Link
             className="mt-3 bg-purple-800 p-2 px-4 rounded-xl hover:bg-purple-400 transition-all"
-            href={"/"}
+            href={"/movies"}
           >
             شاهد الأن
           </Link>

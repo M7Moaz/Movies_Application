@@ -3,6 +3,7 @@ import Container from "@/components/Container";
 import dynamic from "next/dynamic";
 import Clips from "@/components/Clips";
 import Seasons from "@/components/Seasons";
+import Similar from "@/components/Similar";
 
 export async function generateMetadata({ params }) {
   const { id } = params;
@@ -60,6 +61,7 @@ const SeriesPage = async ({ params }) => {
         />
         <Seasons seasons={seasons} />
         <Clips clip={results} />
+        <Similar id={id} type={"tv"} />
       </Container>
     </div>
   );

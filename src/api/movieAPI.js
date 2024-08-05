@@ -111,4 +111,20 @@ export const searchFor = async (query, page = 1) => {
   return toFind.results;
 };
 
+export const similarTo = async (id, type = "movie") => {
+  const url = `https://api.themoviedb.org/3/${type}/${id}/similar?language=ar-AR&page=1`;
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${access_token}`,
+    },
+  };
+
+  const res = await fetch(url, options);
+  const similar = await res.json();
+
+  return similar.results;
+};
+
 export default movieAPI;
