@@ -1,0 +1,19 @@
+.bgRound {
+  background-image: url("/hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+}
+.bgRound::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(174, 11, 255);
+  top: 0;
+  opacity: 0.8;
+  z-index: -2;
+}
