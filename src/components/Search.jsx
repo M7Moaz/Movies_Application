@@ -13,6 +13,12 @@ const Search = () => {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="w-fit">
       <label
@@ -24,6 +30,7 @@ const Search = () => {
           placeholder="البحث ..."
           className="px-6 w-full flex-1 outline-none bg-white"
           ref={inputRef}
+          onKeyDown={handleKeyDown}
         />
         <button
           className="w-auto px-6 py-1.5 bg-purple-600 text-white fill-white active:scale-95 duration-100 will-change-transform overflow-hidden relative transition-all disabled:opacity-70"

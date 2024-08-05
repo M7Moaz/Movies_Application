@@ -4,6 +4,17 @@ import dynamic from "next/dynamic";
 import Clips from "@/components/Clips";
 import Seasons from "@/components/Seasons";
 
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  const details = await detailAPI({ id, type: "tv" });
+  const { name, overview } = details;
+
+  return {
+    title: `سيري بيست | ${name}`,
+    description: `استمتع بمشاهدة ${name} مع سيري بيست. ${overview}`,
+  };
+}
+
 const MovieDetails = dynamic(() => import("@/components/MovieDetails"), {
   ssr: false,
 });

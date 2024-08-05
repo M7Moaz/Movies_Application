@@ -8,6 +8,16 @@ const Video = dynamic(() => import("@/components/Video"), {
   ssr: false,
 });
 
+export async function generateMetadata({ params }) {
+  const { name } = params;
+  const decodeName = decodeURIComponent(name);
+
+  return {
+    title: `سيري بيست | نتائج البحث عن ${decodeName}`,
+    description: `ابحث عن الأفلام والمسلسلات التي تتعلق بـ "${decodeName}" على سيري بيست. تصفح نتائج البحث، واستمتع بأفضل التوصيات، المراجعات، والتقييمات.`,
+  };
+}
+
 const Find = async ({ params }) => {
   const { name } = params;
   const decodeName = decodeURIComponent(name);

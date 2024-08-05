@@ -6,6 +6,14 @@ import {
   ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
 
+export async function generateMetadata() {
+  return {
+    title: "سيري بيست | صفحة غير موجودة",
+    description:
+      "عذراً، لم نتمكن من العثور على الصفحة التي تبحث عنها. قد يكون الرابط غير صحيح أو أن الصفحة قد أزيلت. يرجى العودة إلى الصفحة الرئيسية أو الإبلاغ عن المشكلة.",
+  };
+}
+
 const error = () => {
   return (
     <section className="bg-white">

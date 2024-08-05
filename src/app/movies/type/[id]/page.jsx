@@ -10,6 +10,15 @@ const Pagination = dynamic(() => import("@/components/Pagination"), {
   loading: () => <CustomLoading />,
 });
 
+export async function generateMetadata({ searchParams }) {
+  const { name } = searchParams;
+
+  return {
+    title: `سيري بيست | أفلام ${name}`,
+    description: `استمتع بمشاهدة أفلام ${name}  مع سيري بيست جميع أفلام ال${name}  ستجدها هنا.`,
+  };
+}
+
 const TypeId = async ({ params, searchParams }) => {
   const { id } = params;
   const { name } = searchParams;

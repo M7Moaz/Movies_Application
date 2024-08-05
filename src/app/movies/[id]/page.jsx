@@ -3,6 +3,17 @@ import Clips from "@/components/Clips";
 import Container from "@/components/Container";
 import MovieDetails from "@/components/MovieDetails";
 
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  const details = await detailAPI({ id });
+  const { title, overview } = details;
+
+  return {
+    title: `سيري بيست | فيلم ${title}`,
+    description: `شاهد فيلم ${title} الآن على سيري بيست. اكتشف قصة ${overview} واستمتع بمراجعات وتقييمات حصرية.`,
+  };
+}
+
 const MovieDetail = async ({ params }) => {
   const { id } = params;
   const details = await detailAPI({ id });

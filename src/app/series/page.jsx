@@ -4,6 +4,12 @@ import Title from "@/components/Title";
 import Pagination from "@/components/Pagination";
 import Video from "@/components/Video";
 
+export const metadata = {
+  title: "سيري بيست | جميع المسلسلات",
+  description:
+    "استمتع بمشاهدة أحدث المسلسلات مع سيري بيست. تصفح مراجعات المسلسلات، تقييمات المستخدمين، وإصدارات المسلسلات الجديدة. اكتشف المسلسلات الأكثر شهرة واطلع على أحدث الأخبار والترشيحات لضمان أفضل تجربة مشاهدة.",
+};
+
 const Series = async ({ searchParams }) => {
   const { page } = searchParams;
   const series = await getSeries(page);
