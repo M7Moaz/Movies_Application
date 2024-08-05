@@ -1,6 +1,11 @@
 import { movieByType } from "@/api/movieAPI";
-import Video from "../Video";
 import styles from "./MovieSection.module.css";
+import dynamic from "next/dynamic";
+
+const Video = dynamic(() => import("../Video"), {
+  ssr: false,
+});
+
 const MovieSection = async ({ id }) => {
   const movies = await movieByType(id);
   const { results } = movies;

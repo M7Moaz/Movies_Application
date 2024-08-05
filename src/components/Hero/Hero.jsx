@@ -4,7 +4,7 @@ import styles from "./Hero.module.css";
 
 const Hero = () => {
   return (
-    <div className={`${styles.bgRound} z-10`}>
+    <div className={`${styles.bgRound} z-10`} preload="true">
       <Container>
         <div className="px-3 flex flex-col justify-center items-center text-center text-white">
           <h2 className={`font-bold text-xl mt-48 max-w-1/3`}>

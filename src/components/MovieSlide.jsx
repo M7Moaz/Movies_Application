@@ -1,7 +1,11 @@
+import dynamic from "next/dynamic";
 import Container from "./Container";
-import MovieSection from "./MovieSection/MovieSection";
 import Title from "./Title";
 import { getTheList } from "@/api/movieAPI";
+
+const MovieSection = dynamic(() => import("./MovieSection/MovieSection"), {
+  ssr: false,
+});
 
 const MovieSlide = async () => {
   const listOfTypes = await getTheList();

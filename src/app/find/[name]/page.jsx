@@ -2,7 +2,11 @@ import { searchFor } from "@/api/movieAPI";
 import Container from "@/components/Container";
 import ItemsNotFound from "@/components/ItemsNotFound";
 import Title from "@/components/Title";
-import Video from "@/components/Video";
+import dynamic from "next/dynamic";
+
+const Video = dynamic(() => import("@/components/Video"), {
+  ssr: false,
+});
 
 const Find = async ({ params }) => {
   const { name } = params;

@@ -1,9 +1,9 @@
 import Container from "@/components/Container";
 import { movieByType } from "@/api/movieAPI";
 import Title from "@/components/Title";
-import Video from "@/components/Video";
 import dynamic from "next/dynamic";
 import CustomLoading from "@/components/CustomLoading";
+import Video from "@/components/Video";
 
 const Pagination = dynamic(() => import("@/components/Pagination"), {
   ssr: false,

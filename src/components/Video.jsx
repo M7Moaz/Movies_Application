@@ -2,26 +2,27 @@
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import { useState } from "react";
+
 const Video = ({ id, title, vote, img, name, season }) => {
   const customTitle = title?.slice(0, 20);
   const customVote = vote?.toFixed(1);
 
-  const [isLoaded, setIsLoaded] = useState(false);
   return (
-    <div className="bg-purple-50 shrink grow basis-52 rounded-lg min-w-52 overflow-hidden">
+    <div
+      style={{ maxWidth: "250px" }}
+      className="bg-purple-50 shrink grow basis-52 rounded-lg min-w-52 overflow-hidden"
+    >
       <Image
         className="transition-all"
-        src={`https://image.tmdb.org/t/p/w400${img}`}
+        src={`https://image.tmdb.org/t/p/w300${img}`}
         alt="img1"
-        width={400}
-        height={400}
+        width={250}
+        height={250}
         style={{
           minHeight: "312px",
           height: "auto",
-          opacity: isLoaded ? 1 : 0.3,
+          width: "auto",
         }}
-        onLoad={() => setIsLoaded(true)}
         priority
       />
       <div className="p-2">

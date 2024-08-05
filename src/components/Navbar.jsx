@@ -1,9 +1,9 @@
 import Container from "./Container";
 import Link from "next/link";
-import Search from "./Search";
 import MenuOnPhone from "./MenuOnPhone";
-import ListOfMovies from "./ListOfMovies";
 import Image from "next/image";
+import ListOfMovies from "./ListOfMovies";
+import Search from "./Search";
 
 const Navbar = async () => {
   const links = [
@@ -20,6 +20,8 @@ const Navbar = async () => {
           height={250}
           alt="logo"
           className="hidden md:block w-11"
+          priority={true}
+          loading="eager"
         />
         <Search />
         <ul className="flex items-center">

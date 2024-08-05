@@ -1,7 +1,17 @@
-import { redirect } from "next/navigation";
+import dynamic from "next/dynamic";
+import Loading from "./loading";
+
+const MovieSlide = dynamic(() => import("@/components/MovieSlide"), {
+  ssr: false,
+  loading: () => <Loading />,
+});
 
 const page = () => {
-  return redirect("/");
+  return (
+    <>
+      <MovieSlide />
+    </>
+  );
 };
 
 export default page;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 const base_img = "https://image.tmdb.org/t/p/w500";
 import { StarIcon } from "@heroicons/react/24/solid";
-
+import React from "react";
 const MovieDetails = ({ detail }) => {
   const {
     genres,
@@ -36,7 +36,9 @@ const MovieDetails = ({ detail }) => {
             alt="Movie Poster"
             width={400}
             height={400}
-            priority
+            priority={true}
+            placeholder="blur"
+            blurDataURL={`${base_img}${poster_path}`}
             className="hidden md:block w-full h-full"
           />
           <Image
@@ -45,7 +47,9 @@ const MovieDetails = ({ detail }) => {
             width={700}
             height={700}
             style={{ height: "auto" }}
-            priority
+            priority={true}
+            placeholder="blur"
+            blurDataURL={`${base_img}${poster_path}`}
             className="block md:hidden w-full"
           />
         </div>
@@ -86,4 +90,4 @@ const MovieDetails = ({ detail }) => {
   );
 };
 
-export default MovieDetails;
+export default React.memo(MovieDetails);

@@ -1,8 +1,8 @@
 import Container from "@/components/Container";
 import { getSeries } from "@/api/movieAPI";
 import Title from "@/components/Title";
-import Video from "@/components/Video";
 import Pagination from "@/components/Pagination";
+import Video from "@/components/Video";
 
 const Series = async ({ searchParams }) => {
   const { page } = searchParams;

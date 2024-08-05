@@ -1,8 +1,12 @@
 import { detailAPI, videoAPI } from "@/api/movieAPI";
-import Clips from "@/components/Clips";
 import Container from "@/components/Container";
-import MovieDetails from "@/components/MovieDetails";
+import dynamic from "next/dynamic";
+import Clips from "@/components/Clips";
 import Seasons from "@/components/Seasons";
+
+const MovieDetails = dynamic(() => import("@/components/MovieDetails"), {
+  ssr: false,
+});
 
 const SeriesPage = async ({ params }) => {
   const { id } = params;

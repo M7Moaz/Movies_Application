@@ -20,6 +20,10 @@ const ListOfMovies = ({ isOpen }) => {
     fetchData();
   }, [loading]);
 
+  const handleIsOpen = () => {
+    if (isOpen) isOpen(false);
+  };
+
   const exit = [16, 99, 14, 36, 10402, 10770, 37];
 
   return (
@@ -31,9 +35,7 @@ const ListOfMovies = ({ isOpen }) => {
             className="hover:bg-purple-900 hover:text-white px-2 py-1 border border-x-0 border-t-0 last:border-b-0 border-purple-200 transition-all"
             key={type.id}
             href={`/movies/type/${type.id}?name=${type.name}`}
-            onClick={() => {
-              isOpen(false);
-            }}
+            onClick={handleIsOpen}
           >
             {type.name}
           </Link>

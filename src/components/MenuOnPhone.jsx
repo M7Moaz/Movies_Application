@@ -7,21 +7,19 @@ import { useState } from "react";
 
 const MenuOnPhone = ({ links }) => {
   const [toggle, setToggle] = useState(false);
-
   const handleClick = () => {
     setToggle(false);
   };
 
   return (
     <div className="relative z-50 py-1 flex md:hidden justify-between items-center gap-x-3 flex-row-reverse px-3">
-      <h2 className="font-bold text-purple-800 hidden md:block">لوغو</h2>
       <Search />
       <span
         onClick={() => {
           setToggle((prev) => !prev);
         }}
       >
-        <Bars3Icon className="w-10 h-10 text-purple-900 cursor-pointer" />
+        <Bars3Icon className="w-10 h-10 text-purple-900 cursor-pointer z-10" />
       </span>
       {toggle && (
         <ul className="absolute flex flex-col right-4 top-9 bg-white w-52">
