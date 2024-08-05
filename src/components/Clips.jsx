@@ -1,24 +1,31 @@
+import SectionWithScroll from "./SectionWithScroll";
+
 const Clips = ({ clip }) => {
   return (
     <div className="p-3">
-      <div className="flex justify-center gap-3 flex-wrap">
+      <SectionWithScroll>
         {clip.map((el) =>
           el.type === "Trailer" ? (
-            <div key={el.id} className="">
+            <div key={el.id} className="bg-purple-50 h-fit rounded-lg ">
               <iframe
-                className="rounded-lg"
+                className="rounded-t-lg"
                 src={`https://www.youtube.com/embed/${el.key}`}
                 width="300"
                 height="170"
                 allowFullScreen
               ></iframe>
-              <p>{el.name}</p>
+              <p
+                style={{ direction: "ltr" }}
+                className="text-center p-3 font-medium text-purple-900 italic"
+              >
+                {Array.from(el.name).slice(0, 30)} ...
+              </p>
             </div>
           ) : (
             ""
           )
         )}
-      </div>
+      </SectionWithScroll>
     </div>
   );
 };

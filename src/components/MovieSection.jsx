@@ -1,8 +1,8 @@
 import { movieByType } from "@/api/movieAPI";
-import styles from "./MovieSection.module.css";
 import dynamic from "next/dynamic";
+import SectionWithScroll from "./SectionWithScroll";
 
-const Video = dynamic(() => import("../Video"), {
+const Video = dynamic(() => import("./Video"), {
   ssr: false,
 });
 
@@ -10,7 +10,7 @@ const MovieSection = async ({ id }) => {
   const movies = await movieByType(id);
   const { results } = movies;
   return (
-    <section className={`${styles.MovieSection} movie-section py-2`}>
+    <SectionWithScroll>
       {results.map((el) => (
         <Video
           key={el.id}
@@ -20,7 +20,7 @@ const MovieSection = async ({ id }) => {
           id={el.id}
         />
       ))}
-    </section>
+    </SectionWithScroll>
   );
 };
 

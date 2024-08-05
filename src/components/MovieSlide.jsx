@@ -3,7 +3,7 @@ import Container from "./Container";
 import Title from "./Title";
 import { getTheList } from "@/api/movieAPI";
 
-const MovieSection = dynamic(() => import("./MovieSection/MovieSection"), {
+const MovieSection = dynamic(() => import("./MovieSection"), {
   ssr: false,
 });
 
