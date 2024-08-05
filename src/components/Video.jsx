@@ -8,7 +8,10 @@ const Video = ({ id, title, vote, img, name, season }) => {
   const customVote = vote?.toFixed(1);
 
   return (
-    <div className="bg-purple-50 shrink grow basis-52 rounded-lg min-w-52 overflow-hidden w-64">
+    <div
+      style={{ maxWidth: "250px" }}
+      className="bg-purple-50 shrink grow basis-52 rounded-lg min-w-52 overflow-hidden"
+    >
       <Image
         className="transition-all"
         src={`https://image.tmdb.org/t/p/w300${img}`}
