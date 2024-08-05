@@ -16,10 +16,10 @@ const Navbar = async () => {
       <div className="z-50 hidden md:flex justify-between items-center gap-x-3 flex-row-reverse px-3">
         <Image
           src={"/logo.png"}
-          width={250}
-          height={250}
+          width={300}
+          height={300}
           alt="logo"
-          className="hidden md:block w-11"
+          className="hidden md:block w-24"
           priority={true}
           loading="eager"
         />
