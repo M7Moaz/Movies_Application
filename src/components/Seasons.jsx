@@ -7,6 +7,7 @@ const Seasons = ({ seasons }) => {
         (el) =>
           el.poster_path && (
             <Video
+              key={el.id}
               id={el.id}
               title={el.name}
               vote={el.vote_average}
