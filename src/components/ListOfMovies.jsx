@@ -4,7 +4,7 @@ import { getTheList } from "@/api/movieAPI";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const ListOfMovies = () => {
+const ListOfMovies = ({ isOpen }) => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -31,6 +31,9 @@ const ListOfMovies = () => {
             className="hover:bg-purple-900 hover:text-white px-2 py-1 border border-x-0 border-t-0 last:border-b-0 border-purple-200 transition-all"
             key={type.id}
             href={`/movies/type/${type.id}?name=${type.name}`}
+            onClick={() => {
+              isOpen(false);
+            }}
           >
             {type.name}
           </Link>

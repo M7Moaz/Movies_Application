@@ -7,6 +7,11 @@ import { useState } from "react";
 
 const MenuOnPhone = ({ links }) => {
   const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(false);
+  };
+
   return (
     <div className="relative z-50 py-1 flex md:hidden justify-between items-center gap-x-3 flex-row-reverse px-3">
       <h2 className="font-bold text-purple-800 hidden md:block">لوغو</h2>
@@ -21,7 +26,7 @@ const MenuOnPhone = ({ links }) => {
       {toggle && (
         <ul className="absolute flex flex-col right-4 top-9 bg-white w-52">
           {links.map((link, idx) => (
-            <li key={idx} className="w-full">
+            <li key={idx} className="w-full" onClick={handleClick}>
               <Link
                 className="font-medium w-full block px-3 py-3 text-sm text-purple-900 hover:bg-purple-900 hover:text-white transition-colors"
                 href={link.url}
@@ -30,7 +35,7 @@ const MenuOnPhone = ({ links }) => {
               </Link>
             </li>
           ))}
-          <li>{<ListOfMovies />}</li>
+          <li>{<ListOfMovies isOpen={setToggle} />}</li>
         </ul>
       )}
     </div>
