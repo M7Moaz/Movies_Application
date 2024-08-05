@@ -1,5 +1,4 @@
 import SectionWithScroll from "./SectionWithScroll";
-
 const Clips = ({ clip }) => {
   return (
     <div className="p-3">

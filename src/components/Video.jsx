@@ -21,7 +21,7 @@ const Video = ({ id, title, vote, img, name, season }) => {
         style={{
           minHeight: "312px",
           height: "auto",
-          width: "auto",
+          width: "100%",
         }}
         priority
       />

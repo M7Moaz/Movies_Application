@@ -22,7 +22,7 @@ const MenuOnPhone = ({ links }) => {
         <Bars3Icon className="w-10 h-10 text-purple-900 cursor-pointer z-10" />
       </span>
       {toggle && (
-        <ul className="absolute flex flex-col right-4 top-9 bg-white w-52">
+        <ul className="absolute flex flex-col right-4 top-11 bg-white w-52">
           {links.map((link, idx) => (
             <li key={idx} className="w-full" onClick={handleClick}>
               <Link
