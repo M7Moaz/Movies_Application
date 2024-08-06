@@ -72,13 +72,10 @@ export const getTheList = async () => {
       Authorization: `Bearer ${access_token}`,
     },
   };
-
   const res = await fetch(url, options);
   const lists = await res.json();
-
   return lists.genres;
 };
-
 export const getSeries = async (page = 1) => {
   const url = `${base_url}/discover/tv?language=ar-AR&api_key=${api_key}&page=${page}`;
   const options = {
@@ -88,13 +85,10 @@ export const getSeries = async (page = 1) => {
       Authorization: `Bearer ${access_token}`,
     },
   };
-
   const res = await fetch(url, options);
   const series = await res.json();
-
   return series;
 };
-
 export const searchFor = async (query, page = 1) => {
   const url = `${base_url}/search/multi?query=${query}&language=ar-AR&page=${page}`;
   const options = {
@@ -110,7 +104,6 @@ export const searchFor = async (query, page = 1) => {
 
   return toFind.results;
 };
-
 export const similarTo = async (id, type = "movie") => {
   const url = `https://api.themoviedb.org/3/${type}/${id}/similar?language=ar-AR&page=1`;
   const options = {

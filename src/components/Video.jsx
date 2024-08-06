@@ -4,14 +4,12 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { useState } from "react";
 import cardImg from "/public/imgCard.webp";
-
 const Video = ({ id, title, vote, img, name, season }) => {
   const customTitle = title?.slice(0, 20);
   const customVote = vote?.toFixed(1);
   const [customImg, setCustomImg] = useState(
     `https://image.tmdb.org/t/p/w300${img}`
   );
-
   return (
     <div
       style={{ maxWidth: "250px" }}
