@@ -2,10 +2,15 @@
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { useState } from "react";
+import cardImg from "/public/imgCard.webp";
 
 const Video = ({ id, title, vote, img, name, season }) => {
   const customTitle = title?.slice(0, 20);
   const customVote = vote?.toFixed(1);
+  const [customImg, setCustomImg] = useState(
+    `https://image.tmdb.org/t/p/w300${img}`
+  );
 
   return (
     <div
@@ -14,7 +19,7 @@ const Video = ({ id, title, vote, img, name, season }) => {
     >
       <Image
         className="transition-all"
-        src={`https://image.tmdb.org/t/p/w300${img}`}
+        src={customImg}
         alt={title}
         width={250}
         height={250}
@@ -24,6 +29,7 @@ const Video = ({ id, title, vote, img, name, season }) => {
           width: "100%",
         }}
         priority
+        onError={() => setCustomImg(cardImg)}
       />
       <div className="p-2">
         <h1 className="text-purple-800 font-bold text-center">
