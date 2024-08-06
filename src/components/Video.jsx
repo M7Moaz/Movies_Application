@@ -15,7 +15,7 @@ const Video = ({ id, title, vote, img, name, season }) => {
       <Image
         className="transition-all"
         src={`https://image.tmdb.org/t/p/w300${img}`}
-        alt={`${name ? name : title}`}
+        alt={title}
         width={250}
         height={250}
         style={{
